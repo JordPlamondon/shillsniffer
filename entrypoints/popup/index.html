@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShillSniffer Settings</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <img src="/scrollsniffer-icon.svg" alt="" class="header-icon">
+      <h1>ShillSniffer</h1>
+    </header>
+
+    <main class="main">
+      <section class="section">
+        <label class="label" for="llm-provider">LLM Provider</label>
+        <select id="llm-provider" class="select">
+          <option value="groq">Groq (Cloud - requires API key)</option>
+          <option value="ollama">Ollama (Local - free, unlimited)</option>
+        </select>
+      </section>
+
+      <!-- Groq Settings -->
+      <section class="section" id="groq-settings">
+        <label class="label" for="api-key">Groq API Key</label>
+        <input
+          type="password"
+          id="api-key"
+          class="input"
+          placeholder="gsk_..."
+          autocomplete="off"
+        >
+        <p class="hint">Free tier at <a href="https://console.groq.com" target="_blank">console.groq.com</a>. Stored locally.</p>
+      </section>
+
+      <!-- Ollama Settings -->
+      <section class="section" id="ollama-settings" style="display: none;">
+        <label class="label" for="ollama-url">Ollama URL</label>
+        <input
+          type="text"
+          id="ollama-url"
+          class="input"
+          placeholder="http://localhost:11434"
+          autocomplete="off"
+        >
+        <label class="label" for="ollama-model" style="margin-top: 12px;">Model</label>
+        <select id="ollama-model" class="select">
+          <option value="llama3.2">llama3.2 (recommended)</option>
+          <option value="llama3.1">llama3.1</option>
+          <option value="mistral">mistral</option>
+          <option value="phi3">phi3</option>
+          <option value="gemma2">gemma2</option>
+          <option value="qwen2.5">qwen2.5</option>
+        </select>
+        <p class="hint">
+          Requires <a href="https://ollama.ai" target="_blank">Ollama</a> running locally.
+          Run: <code>ollama pull llama3.2</code>
+        </p>
+      </section>
+
+      <section class="section">
+        <label class="toggle">
+          <span class="toggle-label">Show passive indicators</span>
+          <input type="checkbox" id="passive-indicators" checked>
+          <span class="toggle-switch"></span>
+        </label>
+        <p class="hint">Display badge on tweets from authors with commercial interests.</p>
+      </section>
+
+      <section class="section">
+        <label class="toggle">
+          <span class="toggle-label">Enable AI analysis</span>
+          <input type="checkbox" id="ai-analysis" checked>
+          <span class="toggle-switch"></span>
+        </label>
+        <p class="hint">Click badges to get AI-powered analysis (requires API key).</p>
+      </section>
+
+      <section class="section stats">
+        <p class="stat">Cache: <span id="cache-count">0</span> authors analyzed</p>
+        <button id="clear-cache" class="button-secondary">Clear Cache</button>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Made with spite for undisclosed promotions.</p>
+    </footer>
+  </div>
+
+  <script type="module" src="./main.ts"></script>
+</body>
+</html>

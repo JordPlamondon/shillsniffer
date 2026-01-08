@@ -1,0 +1,297 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   ShillSniffer - Dark Dashboard Theme
+   A refined, professional dark interface
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* CSS Variables */
+:root {
+  --bg-primary: #0a0a0a;
+  --bg-card: #141414;
+  --bg-hover: #1a1a1a;
+  --border: #2a2a2a;
+  --border-focus: #3b82f6;
+  --text-primary: #ffffff;
+  --text-secondary: #888888;
+  --text-muted: #666666;
+  --accent: #3b82f6;
+  --success: #22c55e;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+}
+
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Base */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  width: 360px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  padding: 20px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.header-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.header h1 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+/* Main Content */
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Card Sections */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+
+/* Labels */
+.label {
+  font-weight: 500;
+  font-size: 13px;
+  color: var(--text-primary);
+}
+
+/* Input Fields */
+.input {
+  padding: 10px 12px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, monospace;
+  font-size: 13px;
+  color: var(--text-primary);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.input::placeholder {
+  color: var(--text-muted);
+}
+
+/* Select Fields */
+.select {
+  padding: 10px 12px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: 13px;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23888' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 32px;
+}
+
+.select:focus {
+  outline: none;
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.select option {
+  background: var(--bg-card);
+  color: var(--text-primary);
+}
+
+/* Code inline */
+code {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, monospace;
+  font-size: 12px;
+  background: var(--bg-primary);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: var(--accent);
+}
+
+/* Hint Text */
+.hint {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.hint a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: text-decoration 0.15s ease;
+}
+
+.hint a:hover {
+  text-decoration: underline;
+}
+
+/* Toggle Switch */
+.toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.toggle-label {
+  font-weight: 500;
+  font-size: 13px;
+  color: var(--text-primary);
+}
+
+/* Hide default checkbox */
+.toggle input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Custom toggle track */
+.toggle-switch {
+  position: relative;
+  width: 40px;
+  height: 22px;
+  background: var(--border);
+  border-radius: 11px;
+  transition: background-color 0.2s ease;
+  flex-shrink: 0;
+}
+
+/* Toggle thumb */
+.toggle-switch::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  background: var(--text-primary);
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Checked state */
+.toggle input[type="checkbox"]:checked + .toggle-switch {
+  background: var(--success);
+}
+
+.toggle input[type="checkbox"]:checked + .toggle-switch::after {
+  transform: translateX(18px);
+}
+
+/* Focus state for accessibility */
+.toggle input[type="checkbox"]:focus-visible + .toggle-switch {
+  box-shadow: 0 0 0 2px var(--bg-primary), 0 0 0 4px var(--accent);
+}
+
+/* Stats Section */
+.stats {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+}
+
+.stat {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.stat span {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Secondary Button */
+.button-secondary {
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-primary);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.button-secondary:hover {
+  background: var(--bg-hover);
+  border-color: #3a3a3a;
+}
+
+.button-secondary:active {
+  background: #222222;
+}
+
+/* Footer */
+.footer {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.footer p {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.footer a {
+  font-size: 11px;
+  color: var(--accent);
+  text-decoration: none;
+  transition: text-decoration 0.15s ease;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}

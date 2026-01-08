@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+
+# Build output
+.output/
+dist/
+
+# WXT cache
+.wxt/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Environment / secrets
+.env
+.env.local
+*.pem
+
+*.log
+
+# Chrome extension
+*.crx
+*.zip
